@@ -1,21 +1,60 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- Project metadata -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>bankingSystem</artifactId>
-  <packaging>war</packaging>
+  <packaging>war</packaging> <!-- Packaging type: WAR -->
   <version>1.0-SNAPSHOT</version>
   <name>bankingSystem Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <!-- Project dependencies -->
   <dependencies>
+    <!-- JUnit dependency for testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <version>4.13.2</version> <!-- Updated JUnit version -->
+      <scope>test</scope> <!-- Dependency scope: test -->
+    </dependency>
+
+    <!-- Jakarta EE API dependency -->
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>9.0.0</version> <!-- Updated Jakarta EE API version -->
+      <scope>provided</scope> <!-- Dependency scope: provided -->
+    </dependency>
+    <!-- Servlet API dependency -->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>5.0.0</version> <!-- Updated Servlet API version -->
+      <scope>provided</scope>
     </dependency>
   </dependencies>
+
+  <!-- Build configuration -->
   <build>
-    <finalName>bankingSystem</finalName>
+    <finalName>bankingSystem</finalName> <!-- Final name of the WAR file -->
+    <!-- Plugins used during the build process -->
+    <plugins>
+      <!-- maven-war-plugin: Packages the application as a WAR file -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version> <!-- Updated version -->
+      </plugin>
+
+      <!-- maven-site-plugin: Generates project documentation and reports -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.1</version>
+      </plugin>
+    </plugins>
   </build>
 </project>
